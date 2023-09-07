@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3010;
 const cors = require("cors");
 const app = express();
 
-const whitelist = ["http://localhost:5173", "http://example2.com"];
+const whitelist = ["http://localhost:5173", "http://cone-react.netlify.com"];
 
 app.options("*", cors());
 
@@ -24,7 +24,7 @@ app.use(cors(corsOptions));
 
 app.use(bodyparser.json());
 
-app.get("/", (res) => {
+app.get("/", (req, res) => {
   res.send("From server");
 });
 
